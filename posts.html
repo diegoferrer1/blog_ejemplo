@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Artículos - Blog Oscuro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        'custom-dark': '#1a1a2e',
+                        'custom-card': 'rgba(40, 40, 70, 0.5)',
+                        'custom-light': '#e0e0e0',
+                        'custom-accent': '#7f5af0',
+                        'custom-secondary': '#2cb67d',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-custom-dark text-custom-light font-poppins">
+
+    <header class="py-6 sticky top-0 z-50 bg-custom-dark/80 backdrop-blur-md shadow-lg">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="site-title">
+                <h1 class="text-3xl font-bold text-custom-accent">Blog Oscuro</h1>
+                <p class="text-sm text-custom-secondary">Información y Novedades</p>
+            </div>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="index.html" class="hover:text-custom-accent transition-colors duration-300">Inicio</a></li>
+                    <li><a href="about.html" class="hover:text-custom-accent transition-colors duration-300">Sobre Mí</a></li>
+                    <li><a href="posts.html" class="hover:text-custom-accent text-custom-accent font-semibold transition-colors duration-300">Artículos</a></li>
+                    <li><a href="contact.html" class="hover:text-custom-accent transition-colors duration-300">Contacto</a></li>
+                </ul>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-custom-light focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-custom-dark/90 mt-2">
+            <ul class="flex flex-col items-center space-y-4 py-4">
+                <li><a href="index.html" class="hover:text-custom-accent transition-colors duration-300">Inicio</a></li>
+                <li><a href="about.html" class="hover:text-custom-accent transition-colors duration-300">Sobre Mí</a></li>
+                <li><a href="posts.html" class="text-custom-accent font-semibold">Artículos</a></li>
+                <li><a href="contact.html" class="hover:text-custom-accent transition-colors duration-300">Contacto</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-16">
+        <section class="text-center mb-12">
+            <h2 class="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-custom-accent to-custom-secondary">Artículos Recientes</h2>
+            <p class="text-lg mt-4 text-custom-light/80">Explora publicaciones sobre tecnología, diseño, desarrollo y más.</p>
+        </section>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <article class="bg-custom-card p-6 rounded-xl shadow-xl hover:shadow-2xl transition-shadow duration-300 backdrop-blur-sm">
+                <img src="https://placehold.co/600x400/2cb67d/1a1a2e?text=Artículo+1" alt="Artículo 1" class="rounded-lg mb-4 w-full h-48 object-cover">
+                <h3 class="text-2xl font-semibold mb-2 text-custom-accent">Explorando el Futuro de la Web</h3>
+                <p class="text-sm text-gray-400 mb-3">28 Mayo, 2025</p>
+                <p class="text-custom-light mb-4 leading-relaxed">
+                    Un vistazo a las tecnologías emergentes que están moldeando la próxima generación de experiencias digitales.
+                </p>
+                <a href="#" class="text-custom-secondary hover:underline font-medium">Leer más &rarr;</a>
+            </article>
+
+            <article class="bg-custom-card p-6 rounded-xl shadow-xl hover:shadow-2xl transition-shadow duration-300 backdrop-blur-sm">
+                <img src="https://placehold.co/600x400/7f5af0/1a1a2e?text=Artículo+2" alt="Artículo 2" class="rounded-lg mb-4 w-full h-48 object-cover">
+                <h3 class="text-2xl font-semibold mb-2 text-custom-accent">Diseño Minimalista: Menos es Más</h3>
+                <p class="text-sm text-gray-400 mb-3">25 Mayo, 2025</p>
+                <p class="text-custom-light mb-4 leading-relaxed">
+                    Principios clave del diseño minimalista y cómo aplicarlos para crear interfaces limpias y efectivas.
+                </p>
+                <a href="#" class="text-custom-secondary hover:underline font-medium">Leer más &rarr;</a>
+            </article>
+
+            <!-- Más artículos pueden ir aquí -->
+        </div>
+    </main>
+
+    <footer class="bg-custom-dark/90 py-8 text-center border-t border-custom-accent/30">
+        <div class="container mx-auto px-6">
+            <p class="text-custom-light">&copy; <span id="currentYear"></span> Blog. Todos los derechos reservados.</p>
+            <p class="text-sm text-gray-400 mt-2">Diseñado por <a href="#">SQUASO®</a></p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
